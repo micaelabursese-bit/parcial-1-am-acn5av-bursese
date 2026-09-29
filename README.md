@@ -19,6 +19,9 @@ Aplicación Android orientada a la gestión y seguimiento de equipos de Karting.
   - `MainActivity`: Pantalla principal y menú de navegación.
   - `MetricasActivity`: Registro y cálculo de tiempos/métricas.
   - `ExperienciaActivity`: Cuestionario interactivo y balance de rendimiento.
+ 
+  - ##  Mockup y Prototipo
+![Mockup de la Aplicación](Mockup/mockupact.png)
 
 ---
 
