@@ -1,0 +1,86 @@
+<html>
+<head>
+<title>MainActivity.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #7a7e85;}
+.s4 { color: #2aacb8;}
+.s5 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#191a1c">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+MainActivity.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com</span><span class="s2">.</span><span class="s1">example</span><span class="s2">.</span><span class="s1">kartingteam</span><span class="s2">;</span>
+
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">content</span><span class="s2">.</span><span class="s1">Intent</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">graphics</span><span class="s2">.</span><span class="s1">Color</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">os</span><span class="s2">.</span><span class="s1">Bundle</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">view</span><span class="s2">.</span><span class="s1">View</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">widget</span><span class="s2">.</span><span class="s1">Button</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">widget</span><span class="s2">.</span><span class="s1">LinearLayout</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">androidx</span><span class="s2">.</span><span class="s1">appcompat</span><span class="s2">.</span><span class="s1">app</span><span class="s2">.</span><span class="s1">AppCompatActivity</span><span class="s2">;</span>
+
+<span class="s0">public class </span><span class="s1">MainActivity </span><span class="s0">extends </span><span class="s1">AppCompatActivity </span><span class="s2">{</span>
+
+    <span class="s1">@Override</span>
+    <span class="s0">protected void </span><span class="s1">onCreate</span><span class="s2">(</span><span class="s1">Bundle savedInstanceState</span><span class="s2">) {</span>
+        <span class="s0">super</span><span class="s2">.</span><span class="s1">onCreate</span><span class="s2">(</span><span class="s1">savedInstanceState</span><span class="s2">);</span>
+        <span class="s1">setContentView</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">layout</span><span class="s2">.</span><span class="s1">activity_main</span><span class="s2">);</span>
+
+        <span class="s3">// 1. Inserción dinámica por código (Barra de progreso)</span>
+        <span class="s1">LinearLayout progressContainer </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">containerProgressBar</span><span class="s2">);</span>
+        <span class="s1">generarBarrasProgresoDinamicas</span><span class="s2">(</span><span class="s1">progressContainer</span><span class="s2">);</span>
+
+        <span class="s3">// 2. Evento Click para la pantalla de Métricas</span>
+        <span class="s1">Button btnVerMetricas </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">btnVerMetricas</span><span class="s2">);</span>
+        <span class="s1">btnVerMetricas</span><span class="s2">.</span><span class="s1">setOnClickListener</span><span class="s2">(</span><span class="s0">new </span><span class="s1">View</span><span class="s2">.</span><span class="s1">OnClickListener</span><span class="s2">() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onClick</span><span class="s2">(</span><span class="s1">View v</span><span class="s2">) {</span>
+                <span class="s1">Intent intent </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Intent</span><span class="s2">(</span><span class="s1">MainActivity</span><span class="s2">.</span><span class="s0">this</span><span class="s2">, </span><span class="s1">MetricasActivity</span><span class="s2">.</span><span class="s0">class</span><span class="s2">);</span>
+                <span class="s1">startActivity</span><span class="s2">(</span><span class="s1">intent</span><span class="s2">);</span>
+            <span class="s2">}</span>
+        <span class="s2">});</span>
+
+        <span class="s3">// 3. Evento Click para la pantalla de Experiencia / Sensaciones</span>
+        <span class="s1">Button btnExperiencia </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">btnExperiencia</span><span class="s2">);</span>
+        <span class="s1">btnExperiencia</span><span class="s2">.</span><span class="s1">setOnClickListener</span><span class="s2">(</span><span class="s0">new </span><span class="s1">View</span><span class="s2">.</span><span class="s1">OnClickListener</span><span class="s2">() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onClick</span><span class="s2">(</span><span class="s1">View v</span><span class="s2">) {</span>
+                <span class="s1">Intent intent </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Intent</span><span class="s2">(</span><span class="s1">MainActivity</span><span class="s2">.</span><span class="s0">this</span><span class="s2">, </span><span class="s1">ExperienciaActivity</span><span class="s2">.</span><span class="s0">class</span><span class="s2">);</span>
+                <span class="s1">startActivity</span><span class="s2">(</span><span class="s1">intent</span><span class="s2">);</span>
+            <span class="s2">}</span>
+        <span class="s2">});</span>
+    <span class="s2">}</span>
+
+    <span class="s0">private void </span><span class="s1">generarBarrasProgresoDinamicas</span><span class="s2">(</span><span class="s1">LinearLayout container</span><span class="s2">) {</span>
+        <span class="s0">int </span><span class="s1">totalCarreras </span><span class="s2">= </span><span class="s4">6</span><span class="s2">;</span>
+        <span class="s0">int </span><span class="s1">carrerasCompletadas </span><span class="s2">= </span><span class="s4">4</span><span class="s2">;</span>
+
+        <span class="s0">for </span><span class="s2">(</span><span class="s0">int </span><span class="s1">i </span><span class="s2">= </span><span class="s4">0</span><span class="s2">; </span><span class="s1">i </span><span class="s2">&lt; </span><span class="s1">totalCarreras</span><span class="s2">; </span><span class="s1">i</span><span class="s2">++) {</span>
+            <span class="s1">View segment </span><span class="s2">= </span><span class="s0">new </span><span class="s1">View</span><span class="s2">(</span><span class="s0">this</span><span class="s2">);</span>
+            <span class="s1">LinearLayout</span><span class="s2">.</span><span class="s1">LayoutParams params </span><span class="s2">= </span><span class="s0">new </span><span class="s1">LinearLayout</span><span class="s2">.</span><span class="s1">LayoutParams</span><span class="s2">(</span>
+                    <span class="s4">0</span><span class="s2">,</span>
+                    <span class="s1">LinearLayout</span><span class="s2">.</span><span class="s1">LayoutParams</span><span class="s2">.</span><span class="s1">MATCH_PARENT</span><span class="s2">,</span>
+                    <span class="s4">1.0f</span>
+            <span class="s2">);</span>
+            <span class="s1">params</span><span class="s2">.</span><span class="s1">setMargins</span><span class="s2">(</span><span class="s4">4</span><span class="s2">, </span><span class="s4">0</span><span class="s2">, </span><span class="s4">4</span><span class="s2">, </span><span class="s4">0</span><span class="s2">);</span>
+            <span class="s1">segment</span><span class="s2">.</span><span class="s1">setLayoutParams</span><span class="s2">(</span><span class="s1">params</span><span class="s2">);</span>
+
+            <span class="s0">if </span><span class="s2">(</span><span class="s1">i </span><span class="s2">&lt; </span><span class="s1">carrerasCompletadas</span><span class="s2">) {</span>
+                <span class="s1">segment</span><span class="s2">.</span><span class="s1">setBackgroundColor</span><span class="s2">(</span><span class="s1">Color</span><span class="s2">.</span><span class="s1">parseColor</span><span class="s2">(</span><span class="s5">&quot;#D32F2F&quot;</span><span class="s2">)); </span><span class="s3">// Rojo activo</span>
+            <span class="s2">} </span><span class="s0">else </span><span class="s2">{</span>
+                <span class="s1">segment</span><span class="s2">.</span><span class="s1">setBackgroundColor</span><span class="s2">(</span><span class="s1">Color</span><span class="s2">.</span><span class="s1">parseColor</span><span class="s2">(</span><span class="s5">&quot;#2A2D36&quot;</span><span class="s2">)); </span><span class="s3">// Apagado</span>
+            <span class="s2">}</span>
+            <span class="s1">container</span><span class="s2">.</span><span class="s1">addView</span><span class="s2">(</span><span class="s1">segment</span><span class="s2">);</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+<span class="s2">}</span></pre>
+</body>
+</html>

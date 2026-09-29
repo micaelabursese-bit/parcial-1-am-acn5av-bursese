@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0F1012"
+    android:padding="20dp">
+
+    <!-- Botón Volver -->
+    <Button
+        android:id="@+id/btnVolverExp"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_pill_button"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="@string/btn_volver"
+        android:textColor="#FFFFFF"
+        android:textSize="13sp"
+        app:backgroundTint="@null"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTitleExp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/title_experiencia"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/btnVolverExp"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Formulario en LinearLayout Vertical -->
+    <LinearLayout
+        android:id="@+id/layoutFormularioExp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/tvTitleExp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Selector de Fecha -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_fecha"
+            android:textColor="#A0A0A0"
+            android:textSize="13sp" />
+
+        <Button
+            android:id="@+id/btnFecha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/bg_card"
+            android:gravity="start|center_vertical"
+            android:padding="12dp"
+            android:text="Seleccionar fecha"
+            android:textColor="#FFFFFF"
+            app:backgroundTint="@null" />
+
+        <!-- Tipo de Sesión -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_tipo_sesion"
+            android:textColor="#A0A0A0"
+            android:textSize="13sp" />
+
+        <RadioGroup
+            android:id="@+id/rgTipoSesion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="12dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbCarrera"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="Carrera"
+                android:textColor="#FFFFFF" />
+
+            <RadioButton
+                android:id="@+id/rbPractica"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Práctica"
+                android:textColor="#FFFFFF" />
+        </RadioGroup>
+
+        <!-- Campo de Comentarios / Sensaciones -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_comentarios"
+            android:textColor="#A0A0A0"
+            android:textSize="13sp" />
+
+        <EditText
+            android:id="@+id/etComentarios"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/bg_card"
+            android:gravity="top|start"
+            android:hint="@string/hint_comentarios"
+            android:padding="12dp"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#606060"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <!-- ScrollView que contendrá los elementos agregados por código Java -->
+    <ScrollView
+        android:id="@+id/scrollExperiencias"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
+        app:layout_constraintTop_toBottomOf="@id/layoutFormularioExp"
+        app:layout_constraintBottom_toTopOf="@id/btnGuardarExp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Contenedor dinámico -->
+        <LinearLayout
+            android:id="@+id/contenedorExperiencias"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
+    <!-- Botón de acción para Guardar/Agregar -->
+    <Button
+        android:id="@+id/btnGuardarExp"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/bg_button_red"
+        android:text="@string/btn_guardar_experiencia"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

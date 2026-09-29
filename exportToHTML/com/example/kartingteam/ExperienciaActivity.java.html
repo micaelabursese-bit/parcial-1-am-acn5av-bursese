@@ -1,0 +1,141 @@
+<html>
+<head>
+<title>ExperienciaActivity.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #7a7e85;}
+.s4 { color: #6aab73;}
+.s5 { color: #2aacb8;}
+</style>
+</head>
+<body bgcolor="#191a1c">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+ExperienciaActivity.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com</span><span class="s2">.</span><span class="s1">example</span><span class="s2">.</span><span class="s1">kartingteam</span><span class="s2">;</span>
+
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">app</span><span class="s2">.</span><span class="s1">DatePickerDialog</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">graphics</span><span class="s2">.</span><span class="s1">Color</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">os</span><span class="s2">.</span><span class="s1">Bundle</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">text</span><span class="s2">.</span><span class="s1">TextUtils</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">view</span><span class="s2">.</span><span class="s1">View</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">widget</span><span class="s2">.</span><span class="s1">Button</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">widget</span><span class="s2">.</span><span class="s1">EditText</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">widget</span><span class="s2">.</span><span class="s1">LinearLayout</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">widget</span><span class="s2">.</span><span class="s1">RadioButton</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">widget</span><span class="s2">.</span><span class="s1">RadioGroup</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">widget</span><span class="s2">.</span><span class="s1">TextView</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">widget</span><span class="s2">.</span><span class="s1">Toast</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">androidx</span><span class="s2">.</span><span class="s1">appcompat</span><span class="s2">.</span><span class="s1">app</span><span class="s2">.</span><span class="s1">AppCompatActivity</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">androidx</span><span class="s2">.</span><span class="s1">core</span><span class="s2">.</span><span class="s1">content</span><span class="s2">.</span><span class="s1">ContextCompat</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">Calendar</span><span class="s2">;</span>
+
+<span class="s0">public class </span><span class="s1">ExperienciaActivity </span><span class="s0">extends </span><span class="s1">AppCompatActivity </span><span class="s2">{</span>
+
+    <span class="s0">private </span><span class="s1">Button btnFecha</span><span class="s2">;</span>
+    <span class="s0">private </span><span class="s1">EditText etComentarios</span><span class="s2">;</span>
+    <span class="s0">private </span><span class="s1">RadioGroup rgTipoSesion</span><span class="s2">;</span>
+    <span class="s0">private </span><span class="s1">LinearLayout contenedorExperiencias</span><span class="s2">;</span>
+
+    <span class="s1">@Override</span>
+    <span class="s0">protected void </span><span class="s1">onCreate</span><span class="s2">(</span><span class="s1">Bundle savedInstanceState</span><span class="s2">) {</span>
+        <span class="s0">super</span><span class="s2">.</span><span class="s1">onCreate</span><span class="s2">(</span><span class="s1">savedInstanceState</span><span class="s2">);</span>
+        <span class="s1">setContentView</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">layout</span><span class="s2">.</span><span class="s1">activity_experiencia</span><span class="s2">);</span>
+
+        <span class="s3">// Binding de vistas</span>
+        <span class="s1">Button btnVolver </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">btnVolverExp</span><span class="s2">);</span>
+        <span class="s1">btnFecha </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">btnFecha</span><span class="s2">);</span>
+        <span class="s1">etComentarios </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">etComentarios</span><span class="s2">);</span>
+        <span class="s1">rgTipoSesion </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">rgTipoSesion</span><span class="s2">);</span>
+        <span class="s1">contenedorExperiencias </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">contenedorExperiencias</span><span class="s2">);</span>
+        <span class="s1">Button btnGuardar </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">btnGuardarExp</span><span class="s2">);</span>
+
+        <span class="s3">// Listener: Volver</span>
+        <span class="s1">btnVolver</span><span class="s2">.</span><span class="s1">setOnClickListener</span><span class="s2">(</span><span class="s1">v -&gt; finish</span><span class="s2">());</span>
+
+        <span class="s3">// Listener: DatePicker</span>
+        <span class="s1">btnFecha</span><span class="s2">.</span><span class="s1">setOnClickListener</span><span class="s2">(</span><span class="s1">v -&gt; mostrarDatePicker</span><span class="s2">());</span>
+
+        <span class="s3">// Listener: Guardar y Crear Elemento Dinámico en Java</span>
+        <span class="s1">btnGuardar</span><span class="s2">.</span><span class="s1">setOnClickListener</span><span class="s2">(</span><span class="s1">v -&gt; guardarExperienciaDinamica</span><span class="s2">());</span>
+    <span class="s2">}</span>
+
+    <span class="s0">private void </span><span class="s1">mostrarDatePicker</span><span class="s2">() {</span>
+        <span class="s1">Calendar c </span><span class="s2">= </span><span class="s1">Calendar</span><span class="s2">.</span><span class="s1">getInstance</span><span class="s2">();</span>
+        <span class="s0">int </span><span class="s1">year </span><span class="s2">= </span><span class="s1">c</span><span class="s2">.</span><span class="s1">get</span><span class="s2">(</span><span class="s1">Calendar</span><span class="s2">.</span><span class="s1">YEAR</span><span class="s2">);</span>
+        <span class="s0">int </span><span class="s1">month </span><span class="s2">= </span><span class="s1">c</span><span class="s2">.</span><span class="s1">get</span><span class="s2">(</span><span class="s1">Calendar</span><span class="s2">.</span><span class="s1">MONTH</span><span class="s2">);</span>
+        <span class="s0">int </span><span class="s1">day </span><span class="s2">= </span><span class="s1">c</span><span class="s2">.</span><span class="s1">get</span><span class="s2">(</span><span class="s1">Calendar</span><span class="s2">.</span><span class="s1">DAY_OF_MONTH</span><span class="s2">);</span>
+
+        <span class="s1">DatePickerDialog dialog </span><span class="s2">= </span><span class="s0">new </span><span class="s1">DatePickerDialog</span><span class="s2">(</span>
+                <span class="s1">ExperienciaActivity</span><span class="s2">.</span><span class="s0">this</span><span class="s2">,</span>
+                <span class="s2">(</span><span class="s1">view</span><span class="s2">, </span><span class="s1">y</span><span class="s2">, </span><span class="s1">m</span><span class="s2">, </span><span class="s1">d</span><span class="s2">) </span><span class="s1">-&gt; btnFecha</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s1">d </span><span class="s2">+ </span><span class="s4">&quot;/&quot; </span><span class="s2">+ (</span><span class="s1">m </span><span class="s2">+ </span><span class="s5">1</span><span class="s2">) + </span><span class="s4">&quot;/&quot; </span><span class="s2">+ </span><span class="s1">y</span><span class="s2">),</span>
+                <span class="s1">year</span><span class="s2">, </span><span class="s1">month</span><span class="s2">, </span><span class="s1">day</span>
+        <span class="s2">);</span>
+        <span class="s1">dialog</span><span class="s2">.</span><span class="s1">show</span><span class="s2">();</span>
+    <span class="s2">}</span>
+
+    <span class="s0">private void </span><span class="s1">guardarExperienciaDinamica</span><span class="s2">() {</span>
+        <span class="s1">String comentarios </span><span class="s2">= </span><span class="s1">etComentarios</span><span class="s2">.</span><span class="s1">getText</span><span class="s2">().</span><span class="s1">toString</span><span class="s2">().</span><span class="s1">trim</span><span class="s2">();</span>
+        <span class="s1">String fecha </span><span class="s2">= </span><span class="s1">btnFecha</span><span class="s2">.</span><span class="s1">getText</span><span class="s2">().</span><span class="s1">toString</span><span class="s2">();</span>
+
+        <span class="s0">if </span><span class="s2">(</span><span class="s1">TextUtils</span><span class="s2">.</span><span class="s1">isEmpty</span><span class="s2">(</span><span class="s1">comentarios</span><span class="s2">)) {</span>
+            <span class="s1">Toast</span><span class="s2">.</span><span class="s1">makeText</span><span class="s2">(</span><span class="s0">this</span><span class="s2">, </span><span class="s1">R</span><span class="s2">.</span><span class="s1">string</span><span class="s2">.</span><span class="s1">error_vacio</span><span class="s2">, </span><span class="s1">Toast</span><span class="s2">.</span><span class="s1">LENGTH_SHORT</span><span class="s2">).</span><span class="s1">show</span><span class="s2">();</span>
+            <span class="s0">return</span><span class="s2">;</span>
+        <span class="s2">}</span>
+
+        <span class="s3">// Obtener el tipo de sesión seleccionado</span>
+        <span class="s0">int </span><span class="s1">selectedId </span><span class="s2">= </span><span class="s1">rgTipoSesion</span><span class="s2">.</span><span class="s1">getCheckedRadioButtonId</span><span class="s2">();</span>
+        <span class="s1">RadioButton rbSeleccionado </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">selectedId</span><span class="s2">);</span>
+        <span class="s1">String tipoSesion </span><span class="s2">= (</span><span class="s1">rbSeleccionado </span><span class="s2">!= </span><span class="s0">null</span><span class="s2">) ? </span><span class="s1">rbSeleccionado</span><span class="s2">.</span><span class="s1">getText</span><span class="s2">().</span><span class="s1">toString</span><span class="s2">() : </span><span class="s4">&quot;Sesión&quot;</span><span class="s2">;</span>
+
+        <span class="s3">// --- CREACIÓN DINÁMICA DE VISTAS DESDE JAVA (Requisito Obligatorio) ---</span>
+
+        <span class="s3">// 1. Crear un LinearLayout vertical que actuará como tarjeta</span>
+        <span class="s1">LinearLayout tarjeta </span><span class="s2">= </span><span class="s0">new </span><span class="s1">LinearLayout</span><span class="s2">(</span><span class="s0">this</span><span class="s2">);</span>
+        <span class="s1">tarjeta</span><span class="s2">.</span><span class="s1">setOrientation</span><span class="s2">(</span><span class="s1">LinearLayout</span><span class="s2">.</span><span class="s1">VERTICAL</span><span class="s2">);</span>
+        <span class="s1">tarjeta</span><span class="s2">.</span><span class="s1">setBackgroundResource</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">drawable</span><span class="s2">.</span><span class="s1">bg_card</span><span class="s2">); </span><span class="s3">// Aplica el drawable de tarjeta</span>
+        <span class="s1">tarjeta</span><span class="s2">.</span><span class="s1">setPadding</span><span class="s2">(</span><span class="s5">32</span><span class="s2">, </span><span class="s5">24</span><span class="s2">, </span><span class="s5">32</span><span class="s2">, </span><span class="s5">24</span><span class="s2">);</span>
+
+        <span class="s3">// Definir layout params con márgenes</span>
+        <span class="s1">LinearLayout</span><span class="s2">.</span><span class="s1">LayoutParams paramsTarjeta </span><span class="s2">= </span><span class="s0">new </span><span class="s1">LinearLayout</span><span class="s2">.</span><span class="s1">LayoutParams</span><span class="s2">(</span>
+                <span class="s1">LinearLayout</span><span class="s2">.</span><span class="s1">LayoutParams</span><span class="s2">.</span><span class="s1">MATCH_PARENT</span><span class="s2">,</span>
+                <span class="s1">LinearLayout</span><span class="s2">.</span><span class="s1">LayoutParams</span><span class="s2">.</span><span class="s1">WRAP_CONTENT</span>
+        <span class="s2">);</span>
+        <span class="s1">paramsTarjeta</span><span class="s2">.</span><span class="s1">setMargins</span><span class="s2">(</span><span class="s5">0</span><span class="s2">, </span><span class="s5">0</span><span class="s2">, </span><span class="s5">0</span><span class="s2">, </span><span class="s5">24</span><span class="s2">);</span>
+        <span class="s1">tarjeta</span><span class="s2">.</span><span class="s1">setLayoutParams</span><span class="s2">(</span><span class="s1">paramsTarjeta</span><span class="s2">);</span>
+
+        <span class="s3">// 2. Encabezado de la tarjeta (Fecha y Tipo de Sesión)</span>
+        <span class="s1">TextView tvHeader </span><span class="s2">= </span><span class="s0">new </span><span class="s1">TextView</span><span class="s2">(</span><span class="s0">this</span><span class="s2">);</span>
+        <span class="s1">String textoHeader </span><span class="s2">= </span><span class="s4">&quot;🏎️ &quot; </span><span class="s2">+ </span><span class="s1">tipoSesion </span><span class="s2">+ </span><span class="s4">&quot; • &quot; </span><span class="s2">+ (</span><span class="s1">fecha</span><span class="s2">.</span><span class="s1">equals</span><span class="s2">(</span><span class="s4">&quot;Seleccionar fecha&quot;</span><span class="s2">) ? </span><span class="s4">&quot;Hoy&quot; </span><span class="s2">: </span><span class="s1">fecha</span><span class="s2">);</span>
+        <span class="s1">tvHeader</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s1">textoHeader</span><span class="s2">);</span>
+        <span class="s1">tvHeader</span><span class="s2">.</span><span class="s1">setTextColor</span><span class="s2">(</span><span class="s1">Color</span><span class="s2">.</span><span class="s1">parseColor</span><span class="s2">(</span><span class="s4">&quot;#FF3B30&quot;</span><span class="s2">)); </span><span class="s3">// Color rojo destacado</span>
+        <span class="s1">tvHeader</span><span class="s2">.</span><span class="s1">setTextSize</span><span class="s2">(</span><span class="s5">13</span><span class="s2">);</span>
+        <span class="s1">tvHeader</span><span class="s2">.</span><span class="s1">setTypeface</span><span class="s2">(</span><span class="s0">null</span><span class="s2">, </span><span class="s1">android</span><span class="s2">.</span><span class="s1">graphics</span><span class="s2">.</span><span class="s1">Typeface</span><span class="s2">.</span><span class="s1">BOLD</span><span class="s2">);</span>
+
+        <span class="s3">// 3. Contenido de los comentarios</span>
+        <span class="s1">TextView tvBody </span><span class="s2">= </span><span class="s0">new </span><span class="s1">TextView</span><span class="s2">(</span><span class="s0">this</span><span class="s2">);</span>
+        <span class="s1">tvBody</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s1">comentarios</span><span class="s2">);</span>
+        <span class="s1">tvBody</span><span class="s2">.</span><span class="s1">setTextColor</span><span class="s2">(</span><span class="s1">Color</span><span class="s2">.</span><span class="s1">WHITE</span><span class="s2">);</span>
+        <span class="s1">tvBody</span><span class="s2">.</span><span class="s1">setTextSize</span><span class="s2">(</span><span class="s5">14</span><span class="s2">);</span>
+        <span class="s1">tvBody</span><span class="s2">.</span><span class="s1">setPadding</span><span class="s2">(</span><span class="s5">0</span><span class="s2">, </span><span class="s5">8</span><span class="s2">, </span><span class="s5">0</span><span class="s2">, </span><span class="s5">0</span><span class="s2">);</span>
+
+        <span class="s3">// 4. Armar la jerarquía visual</span>
+        <span class="s1">tarjeta</span><span class="s2">.</span><span class="s1">addView</span><span class="s2">(</span><span class="s1">tvHeader</span><span class="s2">);</span>
+        <span class="s1">tarjeta</span><span class="s2">.</span><span class="s1">addView</span><span class="s2">(</span><span class="s1">tvBody</span><span class="s2">);</span>
+
+        <span class="s3">// 5. Agregar la tarjeta al ScrollView de la pantalla (al inicio de la lista)</span>
+        <span class="s1">contenedorExperiencias</span><span class="s2">.</span><span class="s1">addView</span><span class="s2">(</span><span class="s1">tarjeta</span><span class="s2">, </span><span class="s5">0</span><span class="s2">);</span>
+
+        <span class="s3">// Feedback al usuario y limpieza del formulario</span>
+        <span class="s1">Toast</span><span class="s2">.</span><span class="s1">makeText</span><span class="s2">(</span><span class="s0">this</span><span class="s2">, </span><span class="s4">&quot;¡Experiencia agregada!&quot;</span><span class="s2">, </span><span class="s1">Toast</span><span class="s2">.</span><span class="s1">LENGTH_SHORT</span><span class="s2">).</span><span class="s1">show</span><span class="s2">();</span>
+        <span class="s1">etComentarios</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s4">&quot;&quot;</span><span class="s2">);</span>
+        <span class="s1">btnFecha</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s4">&quot;Seleccionar fecha&quot;</span><span class="s2">);</span>
+    <span class="s2">}</span>
+<span class="s2">}</span></pre>
+</body>
+</html>

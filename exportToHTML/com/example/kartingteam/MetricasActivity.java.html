@@ -1,0 +1,162 @@
+<html>
+<head>
+<title>MetricasActivity.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #6aab73;}
+.s4 { color: #7a7e85;}
+.s5 { color: #2aacb8;}
+</style>
+</head>
+<body bgcolor="#191a1c">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+MetricasActivity.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com</span><span class="s2">.</span><span class="s1">example</span><span class="s2">.</span><span class="s1">kartingteam</span><span class="s2">;</span>
+
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">graphics</span><span class="s2">.</span><span class="s1">Color</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">os</span><span class="s2">.</span><span class="s1">Bundle</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">view</span><span class="s2">.</span><span class="s1">View</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">widget</span><span class="s2">.</span><span class="s1">Button</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">widget</span><span class="s2">.</span><span class="s1">LinearLayout</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">widget</span><span class="s2">.</span><span class="s1">TextView</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">androidx</span><span class="s2">.</span><span class="s1">appcompat</span><span class="s2">.</span><span class="s1">app</span><span class="s2">.</span><span class="s1">AppCompatActivity</span><span class="s2">;</span>
+
+<span class="s0">public class </span><span class="s1">MetricasActivity </span><span class="s0">extends </span><span class="s1">AppCompatActivity </span><span class="s2">{</span>
+
+    <span class="s0">private </span><span class="s1">LinearLayout containerMetrics</span><span class="s2">;</span>
+
+    <span class="s1">@Override</span>
+    <span class="s0">protected void </span><span class="s1">onCreate</span><span class="s2">(</span><span class="s1">Bundle savedInstanceState</span><span class="s2">) {</span>
+        <span class="s0">super</span><span class="s2">.</span><span class="s1">onCreate</span><span class="s2">(</span><span class="s1">savedInstanceState</span><span class="s2">);</span>
+        <span class="s1">setContentView</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">layout</span><span class="s2">.</span><span class="s1">activity_metricas</span><span class="s2">);</span>
+
+        <span class="s1">Button btnVolver </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">btnVolver</span><span class="s2">);</span>
+        <span class="s0">final </span><span class="s1">Button btnVueltas </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">btnVueltas</span><span class="s2">);</span>
+        <span class="s0">final </span><span class="s1">Button btnTemperaturas </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">btnTemperaturas</span><span class="s2">);</span>
+        <span class="s1">containerMetrics </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">containerMetrics</span><span class="s2">);</span>
+
+        <span class="s1">btnVolver</span><span class="s2">.</span><span class="s1">setOnClickListener</span><span class="s2">(</span><span class="s0">new </span><span class="s1">View</span><span class="s2">.</span><span class="s1">OnClickListener</span><span class="s2">() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onClick</span><span class="s2">(</span><span class="s1">View v</span><span class="s2">) {</span>
+                <span class="s1">finish</span><span class="s2">();</span>
+            <span class="s2">}</span>
+        <span class="s2">});</span>
+
+        <span class="s1">mostrarVueltas</span><span class="s2">();</span>
+
+        <span class="s1">btnVueltas</span><span class="s2">.</span><span class="s1">setOnClickListener</span><span class="s2">(</span><span class="s0">new </span><span class="s1">View</span><span class="s2">.</span><span class="s1">OnClickListener</span><span class="s2">() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onClick</span><span class="s2">(</span><span class="s1">View v</span><span class="s2">) {</span>
+                <span class="s1">btnVueltas</span><span class="s2">.</span><span class="s1">setTextColor</span><span class="s2">(</span><span class="s1">Color</span><span class="s2">.</span><span class="s1">WHITE</span><span class="s2">);</span>
+                <span class="s1">btnTemperaturas</span><span class="s2">.</span><span class="s1">setTextColor</span><span class="s2">(</span><span class="s1">Color</span><span class="s2">.</span><span class="s1">parseColor</span><span class="s2">(</span><span class="s3">&quot;#808080&quot;</span><span class="s2">));</span>
+                <span class="s1">mostrarVueltas</span><span class="s2">();</span>
+            <span class="s2">}</span>
+        <span class="s2">});</span>
+
+        <span class="s1">btnTemperaturas</span><span class="s2">.</span><span class="s1">setOnClickListener</span><span class="s2">(</span><span class="s0">new </span><span class="s1">View</span><span class="s2">.</span><span class="s1">OnClickListener</span><span class="s2">() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onClick</span><span class="s2">(</span><span class="s1">View v</span><span class="s2">) {</span>
+                <span class="s1">btnTemperaturas</span><span class="s2">.</span><span class="s1">setTextColor</span><span class="s2">(</span><span class="s1">Color</span><span class="s2">.</span><span class="s1">WHITE</span><span class="s2">);</span>
+                <span class="s1">btnVueltas</span><span class="s2">.</span><span class="s1">setTextColor</span><span class="s2">(</span><span class="s1">Color</span><span class="s2">.</span><span class="s1">parseColor</span><span class="s2">(</span><span class="s3">&quot;#808080&quot;</span><span class="s2">));</span>
+                <span class="s1">mostrarTemperaturas</span><span class="s2">();</span>
+            <span class="s2">}</span>
+        <span class="s2">});</span>
+    <span class="s2">}</span>
+
+    <span class="s0">private void </span><span class="s1">mostrarVueltas</span><span class="s2">() {</span>
+        <span class="s1">containerMetrics</span><span class="s2">.</span><span class="s1">removeAllViews</span><span class="s2">();</span>
+
+        <span class="s4">// 1. Tarjeta Ancha (Tiempo por vuelta)</span>
+        <span class="s1">containerMetrics</span><span class="s2">.</span><span class="s1">addView</span><span class="s2">(</span><span class="s1">crearTarjeta</span><span class="s2">(</span><span class="s3">&quot;Tiempo por vuelta&quot;</span><span class="s2">, </span><span class="s3">&quot;48.65 PROM.&quot;</span><span class="s2">, </span><span class="s1">Color</span><span class="s2">.</span><span class="s1">WHITE</span><span class="s2">, </span><span class="s0">true</span><span class="s2">));</span>
+
+        <span class="s4">// 2. Fila Doble (Consistencia + Mejor vuelta)</span>
+        <span class="s1">LinearLayout row </span><span class="s2">= </span><span class="s1">crearFila</span><span class="s2">();</span>
+        <span class="s1">row</span><span class="s2">.</span><span class="s1">addView</span><span class="s2">(</span><span class="s1">crearTarjeta</span><span class="s2">(</span><span class="s3">&quot;Consistencia&quot;</span><span class="s2">, </span><span class="s3">&quot;94%&quot;</span><span class="s2">, </span><span class="s1">Color</span><span class="s2">.</span><span class="s1">parseColor</span><span class="s2">(</span><span class="s3">&quot;#4285F4&quot;</span><span class="s2">), </span><span class="s0">false</span><span class="s2">));</span>
+        <span class="s1">row</span><span class="s2">.</span><span class="s1">addView</span><span class="s2">(</span><span class="s1">crearTarjeta</span><span class="s2">(</span><span class="s3">&quot;Mejor vuelta&quot;</span><span class="s2">, </span><span class="s3">&quot;47.95&quot;</span><span class="s2">, </span><span class="s1">Color</span><span class="s2">.</span><span class="s1">parseColor</span><span class="s2">(</span><span class="s3">&quot;#E53935&quot;</span><span class="s2">), </span><span class="s0">false</span><span class="s2">));</span>
+        <span class="s1">containerMetrics</span><span class="s2">.</span><span class="s1">addView</span><span class="s2">(</span><span class="s1">row</span><span class="s2">);</span>
+    <span class="s2">}</span>
+
+    <span class="s0">private void </span><span class="s1">mostrarTemperaturas</span><span class="s2">() {</span>
+        <span class="s1">containerMetrics</span><span class="s2">.</span><span class="s1">removeAllViews</span><span class="s2">();</span>
+
+        <span class="s1">TextView tvTitulo </span><span class="s2">= </span><span class="s0">new </span><span class="s1">TextView</span><span class="s2">(</span><span class="s0">this</span><span class="s2">);</span>
+        <span class="s1">tvTitulo</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s3">&quot;TEMPERATURA DE NEUMÁTICOS&quot;</span><span class="s2">);</span>
+        <span class="s1">tvTitulo</span><span class="s2">.</span><span class="s1">setTextColor</span><span class="s2">(</span><span class="s1">Color</span><span class="s2">.</span><span class="s1">parseColor</span><span class="s2">(</span><span class="s3">&quot;#808080&quot;</span><span class="s2">));</span>
+        <span class="s1">tvTitulo</span><span class="s2">.</span><span class="s1">setTextSize</span><span class="s2">(</span><span class="s5">11f</span><span class="s2">);</span>
+        <span class="s1">tvTitulo</span><span class="s2">.</span><span class="s1">setPadding</span><span class="s2">(</span><span class="s5">0</span><span class="s2">, </span><span class="s5">0</span><span class="s2">, </span><span class="s5">0</span><span class="s2">, </span><span class="s5">16</span><span class="s2">);</span>
+        <span class="s1">containerMetrics</span><span class="s2">.</span><span class="s1">addView</span><span class="s2">(</span><span class="s1">tvTitulo</span><span class="s2">);</span>
+
+        <span class="s4">// Fila 1: Delanteros</span>
+        <span class="s1">LinearLayout row1 </span><span class="s2">= </span><span class="s1">crearFila</span><span class="s2">();</span>
+        <span class="s1">row1</span><span class="s2">.</span><span class="s1">addView</span><span class="s2">(</span><span class="s1">crearTarjeta</span><span class="s2">(</span><span class="s3">&quot;Delantero izq.&quot;</span><span class="s2">, </span><span class="s3">&quot;78 °C&quot;</span><span class="s2">, </span><span class="s1">Color</span><span class="s2">.</span><span class="s1">parseColor</span><span class="s2">(</span><span class="s3">&quot;#4285F4&quot;</span><span class="s2">), </span><span class="s0">false</span><span class="s2">));</span>
+        <span class="s1">row1</span><span class="s2">.</span><span class="s1">addView</span><span class="s2">(</span><span class="s1">crearTarjeta</span><span class="s2">(</span><span class="s3">&quot;Delantero der.&quot;</span><span class="s2">, </span><span class="s3">&quot;92 °C&quot;</span><span class="s2">, </span><span class="s1">Color</span><span class="s2">.</span><span class="s1">parseColor</span><span class="s2">(</span><span class="s3">&quot;#E53935&quot;</span><span class="s2">), </span><span class="s0">false</span><span class="s2">));</span>
+        <span class="s1">containerMetrics</span><span class="s2">.</span><span class="s1">addView</span><span class="s2">(</span><span class="s1">row1</span><span class="s2">);</span>
+
+        <span class="s4">// Fila 2: Traseros</span>
+        <span class="s1">LinearLayout row2 </span><span class="s2">= </span><span class="s1">crearFila</span><span class="s2">();</span>
+        <span class="s1">row2</span><span class="s2">.</span><span class="s1">addView</span><span class="s2">(</span><span class="s1">crearTarjeta</span><span class="s2">(</span><span class="s3">&quot;Trasero izq.&quot;</span><span class="s2">, </span><span class="s3">&quot;74 °C&quot;</span><span class="s2">, </span><span class="s1">Color</span><span class="s2">.</span><span class="s1">parseColor</span><span class="s2">(</span><span class="s3">&quot;#4285F4&quot;</span><span class="s2">), </span><span class="s0">false</span><span class="s2">));</span>
+        <span class="s1">row2</span><span class="s2">.</span><span class="s1">addView</span><span class="s2">(</span><span class="s1">crearTarjeta</span><span class="s2">(</span><span class="s3">&quot;Trasero der.&quot;</span><span class="s2">, </span><span class="s3">&quot;81 °C&quot;</span><span class="s2">, </span><span class="s1">Color</span><span class="s2">.</span><span class="s1">parseColor</span><span class="s2">(</span><span class="s3">&quot;#4285F4&quot;</span><span class="s2">), </span><span class="s0">false</span><span class="s2">));</span>
+        <span class="s1">containerMetrics</span><span class="s2">.</span><span class="s1">addView</span><span class="s2">(</span><span class="s1">row2</span><span class="s2">);</span>
+    <span class="s2">}</span>
+
+    <span class="s0">private </span><span class="s1">LinearLayout crearFila</span><span class="s2">() {</span>
+        <span class="s1">LinearLayout row </span><span class="s2">= </span><span class="s0">new </span><span class="s1">LinearLayout</span><span class="s2">(</span><span class="s0">this</span><span class="s2">);</span>
+        <span class="s1">row</span><span class="s2">.</span><span class="s1">setOrientation</span><span class="s2">(</span><span class="s1">LinearLayout</span><span class="s2">.</span><span class="s1">HORIZONTAL</span><span class="s2">);</span>
+        <span class="s1">row</span><span class="s2">.</span><span class="s1">setWeightSum</span><span class="s2">(</span><span class="s5">2</span><span class="s2">);</span>
+        <span class="s1">LinearLayout</span><span class="s2">.</span><span class="s1">LayoutParams params </span><span class="s2">= </span><span class="s0">new </span><span class="s1">LinearLayout</span><span class="s2">.</span><span class="s1">LayoutParams</span><span class="s2">(</span>
+                <span class="s1">LinearLayout</span><span class="s2">.</span><span class="s1">LayoutParams</span><span class="s2">.</span><span class="s1">MATCH_PARENT</span><span class="s2">,</span>
+                <span class="s1">LinearLayout</span><span class="s2">.</span><span class="s1">LayoutParams</span><span class="s2">.</span><span class="s1">WRAP_CONTENT</span>
+        <span class="s2">);</span>
+        <span class="s1">params</span><span class="s2">.</span><span class="s1">setMargins</span><span class="s2">(</span><span class="s5">0</span><span class="s2">, </span><span class="s5">0</span><span class="s2">, </span><span class="s5">0</span><span class="s2">, </span><span class="s5">12</span><span class="s2">);</span>
+        <span class="s1">row</span><span class="s2">.</span><span class="s1">setLayoutParams</span><span class="s2">(</span><span class="s1">params</span><span class="s2">);</span>
+        <span class="s0">return </span><span class="s1">row</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">private </span><span class="s1">View crearTarjeta</span><span class="s2">(</span><span class="s1">String label</span><span class="s2">, </span><span class="s1">String value</span><span class="s2">, </span><span class="s0">int </span><span class="s1">valueColor</span><span class="s2">, </span><span class="s0">boolean </span><span class="s1">isFullWidth</span><span class="s2">) {</span>
+        <span class="s1">LinearLayout card </span><span class="s2">= </span><span class="s0">new </span><span class="s1">LinearLayout</span><span class="s2">(</span><span class="s0">this</span><span class="s2">);</span>
+        <span class="s1">card</span><span class="s2">.</span><span class="s1">setOrientation</span><span class="s2">(</span><span class="s1">LinearLayout</span><span class="s2">.</span><span class="s1">VERTICAL</span><span class="s2">);</span>
+        <span class="s1">card</span><span class="s2">.</span><span class="s1">setBackgroundResource</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">drawable</span><span class="s2">.</span><span class="s1">bg_card</span><span class="s2">);</span>
+        <span class="s1">card</span><span class="s2">.</span><span class="s1">setPadding</span><span class="s2">(</span><span class="s5">24</span><span class="s2">, </span><span class="s5">24</span><span class="s2">, </span><span class="s5">24</span><span class="s2">, </span><span class="s5">24</span><span class="s2">);</span>
+
+        <span class="s1">LinearLayout</span><span class="s2">.</span><span class="s1">LayoutParams params</span><span class="s2">;</span>
+        <span class="s0">if </span><span class="s2">(</span><span class="s1">isFullWidth</span><span class="s2">) {</span>
+            <span class="s1">params </span><span class="s2">= </span><span class="s0">new </span><span class="s1">LinearLayout</span><span class="s2">.</span><span class="s1">LayoutParams</span><span class="s2">(</span>
+                    <span class="s1">LinearLayout</span><span class="s2">.</span><span class="s1">LayoutParams</span><span class="s2">.</span><span class="s1">MATCH_PARENT</span><span class="s2">,</span>
+                    <span class="s1">LinearLayout</span><span class="s2">.</span><span class="s1">LayoutParams</span><span class="s2">.</span><span class="s1">WRAP_CONTENT</span>
+            <span class="s2">);</span>
+            <span class="s1">params</span><span class="s2">.</span><span class="s1">setMargins</span><span class="s2">(</span><span class="s5">0</span><span class="s2">, </span><span class="s5">0</span><span class="s2">, </span><span class="s5">0</span><span class="s2">, </span><span class="s5">12</span><span class="s2">);</span>
+        <span class="s2">} </span><span class="s0">else </span><span class="s2">{</span>
+            <span class="s1">params </span><span class="s2">= </span><span class="s0">new </span><span class="s1">LinearLayout</span><span class="s2">.</span><span class="s1">LayoutParams</span><span class="s2">(</span>
+                    <span class="s5">0</span><span class="s2">,</span>
+                    <span class="s1">LinearLayout</span><span class="s2">.</span><span class="s1">LayoutParams</span><span class="s2">.</span><span class="s1">WRAP_CONTENT</span><span class="s2">,</span>
+                    <span class="s5">1.0f</span>
+            <span class="s2">);</span>
+            <span class="s1">params</span><span class="s2">.</span><span class="s1">setMargins</span><span class="s2">(</span><span class="s5">6</span><span class="s2">, </span><span class="s5">0</span><span class="s2">, </span><span class="s5">6</span><span class="s2">, </span><span class="s5">0</span><span class="s2">);</span>
+        <span class="s2">}</span>
+        <span class="s1">card</span><span class="s2">.</span><span class="s1">setLayoutParams</span><span class="s2">(</span><span class="s1">params</span><span class="s2">);</span>
+
+        <span class="s1">TextView tvLabel </span><span class="s2">= </span><span class="s0">new </span><span class="s1">TextView</span><span class="s2">(</span><span class="s0">this</span><span class="s2">);</span>
+        <span class="s1">tvLabel</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s1">label</span><span class="s2">);</span>
+        <span class="s1">tvLabel</span><span class="s2">.</span><span class="s1">setTextColor</span><span class="s2">(</span><span class="s1">Color</span><span class="s2">.</span><span class="s1">parseColor</span><span class="s2">(</span><span class="s3">&quot;#808080&quot;</span><span class="s2">));</span>
+        <span class="s1">tvLabel</span><span class="s2">.</span><span class="s1">setTextSize</span><span class="s2">(</span><span class="s5">11f</span><span class="s2">);</span>
+
+        <span class="s1">TextView tvValue </span><span class="s2">= </span><span class="s0">new </span><span class="s1">TextView</span><span class="s2">(</span><span class="s0">this</span><span class="s2">);</span>
+        <span class="s1">tvValue</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s1">value</span><span class="s2">);</span>
+        <span class="s1">tvValue</span><span class="s2">.</span><span class="s1">setTextColor</span><span class="s2">(</span><span class="s1">valueColor</span><span class="s2">);</span>
+        <span class="s1">tvValue</span><span class="s2">.</span><span class="s1">setTextSize</span><span class="s2">(</span><span class="s5">18f</span><span class="s2">);</span>
+        <span class="s1">tvValue</span><span class="s2">.</span><span class="s1">setTypeface</span><span class="s2">(</span><span class="s0">null</span><span class="s2">, </span><span class="s1">android</span><span class="s2">.</span><span class="s1">graphics</span><span class="s2">.</span><span class="s1">Typeface</span><span class="s2">.</span><span class="s1">BOLD</span><span class="s2">);</span>
+
+        <span class="s1">card</span><span class="s2">.</span><span class="s1">addView</span><span class="s2">(</span><span class="s1">tvLabel</span><span class="s2">);</span>
+        <span class="s1">card</span><span class="s2">.</span><span class="s1">addView</span><span class="s2">(</span><span class="s1">tvValue</span><span class="s2">);</span>
+
+        <span class="s0">return </span><span class="s1">card</span><span class="s2">;</span>
+    <span class="s2">}</span>
+<span class="s2">}</span></pre>
+</body>
+</html>

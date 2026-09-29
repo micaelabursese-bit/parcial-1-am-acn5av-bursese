@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Márgenes y Padding Generales -->
+    <dimen name="padding_screen">16dp</dimen>
+    <dimen name="padding_card">12dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_medium">16dp</dimen>
+    <dimen name="card_corner_radius">6dp</dimen>
+
+    <!-- Componentes de Perfil / Header -->
+    <dimen name="driver_photo_size">120dp</dimen>
+
+    <!-- Tamaños de Texto -->
+    <dimen name="text_size_name">24sp</dimen>
+    <dimen name="text_size_stat_value">20sp</dimen>
+    <dimen name="text_size_stat_label">12sp</dimen>
+
+    <!-- Dimensiones para Experiencia / Bitácora (Elementos Dinámicos) -->
+    <dimen name="padding_tarjeta">12dp</dimen>
+    <dimen name="margin_tarjeta">8dp</dimen>
+    <dimen name="texto_tarjeta">16sp</dimen>
+</resources>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Nombre de la App -->
+    <string name="app_name">Karting Team</string>
+
+    <!-- Textos para la Pantalla Principal (MainActivity) -->
+    <string name="driver_name">AGUSTÍN RINCÓN</string>
+    <string name="team_name">Equipo Maggio Kart</string>
+    <string name="category">Categoría General Livianos • Competencia ProKart</string>
+    <string name="stat_position_label">Posición</string>
+    <string name="stat_position_value">#02</string>
+    <string name="stat_points_label">Puntos</string>
+    <string name="stat_points_value">186</string>
+    <string name="stat_podiums_label">Podios</string>
+    <string name="stat_podiums_value">5</string>
+    <string name="title_progreso">PROGRESO DE TEMPORADA</string>
+    <string name="btn_ver_metricas">Ver métricas</string>
+
+    <!-- Textos para la Pantalla de Métricas (MetricasActivity) -->
+    <string name="btn_volver">‹ Volver</string>
+    <string name="title_metricas">MÉTRICAS</string>
+    <string name="tab_vueltas">Vueltas</string>
+    <string name="tab_temperaturas">Temperaturas</string>
+    <string name="label_tiempo_vuelta">Tiempo por vuelta</string>
+    <string name="val_tiempo_vuelta">48.65 PROM.</string>
+    <string name="label_consistencia">Consistencia</string>
+    <string name="val_consistencia">94%</string>
+    <string name="label_mejor_vuelta">Mejor vuelta</string>
+    <string name="val_mejor_vuelta">47.95</string>
+    <string name="title_temperaturas_neumaticos">TEMPERATURA DE NEUMATICOS</string>
+
+    <!-- Textos para la Pantalla de Experiencia (ExperienciaActivity) -->
+    <string name="btn_experiencia">Experiencia / Sensaciones</string>
+    <string name="title_experiencia">Bitácora de Experiencia</string>
+    <string name="label_fecha">Fecha de sesión</string>
+    <string name="label_tipo_sesion">Tipo de Sesión</string>
+    <string name="label_comentarios">¿Cómo te sentiste en pista?</string>
+    <string name="hint_comentarios">Escribí sensaciones sobre el karting, chasis, motor o pista...</string>
+    <string name="btn_guardar_experiencia">Guardar Experiencia</string>
+    <string name="btn_agregar_experiencia">Publicar Experiencia</string>
+    <string name="error_vacio">Por favor escribe una experiencia antes de publicar</string>
+</resources>

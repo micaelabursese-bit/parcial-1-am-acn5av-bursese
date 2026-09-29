@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background_dark">#121212</color>
+    <color name="surface_card">#1E1E1E</color>
+    <color name="racing_red">#D32F2F</color>
+    <color name="racing_red_dark">#8E0000</color>
+    <color name="accent_blue">#2979FF</color>
+    <color name="text_white">#FFFFFF</color>
+    <color name="text_gray">#B0B0B0</color>
+    <!-- Nuevos colores para las pestañas y métricas -->
+    <color name="tab_selected">#3A7DFF</color>
+    <color name="tab_unselected">#252528</color>
+</resources>
