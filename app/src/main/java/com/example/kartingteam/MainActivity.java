@@ -1,12 +1,14 @@
 package com.example.kartingteam;
 
 import android.content.Intent;
-import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -38,11 +40,24 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        // 4. Evento Click para la pantalla de Setup del Kart (pasa el nombre del piloto)
+        Button btnSetup = findViewById(R.id.btnSetup);
+        btnSetup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SetupActivity.class);
+                intent.putExtra("nombrePiloto", getString(R.string.driver_name));
+                startActivity(intent);
+            }
+        });
     }
 
     private void generarBarrasProgresoDinamicas(LinearLayout container) {
         int totalCarreras = 6;
         int carrerasCompletadas = 4;
+        float density = getResources().getDisplayMetrics().density;
+        int margen = (int) (3 * density);
 
         for (int i = 0; i < totalCarreras; i++) {
             View segment = new View(this);
@@ -51,14 +66,16 @@ public class MainActivity extends AppCompatActivity {
                     LinearLayout.LayoutParams.MATCH_PARENT,
                     1.0f
             );
-            params.setMargins(4, 0, 4, 0);
+            params.setMargins(margen, 0, margen, 0);
             segment.setLayoutParams(params);
 
-            if (i < carrerasCompletadas) {
-                segment.setBackgroundColor(Color.parseColor("#D32F2F")); // Rojo activo
-            } else {
-                segment.setBackgroundColor(Color.parseColor("#2A2D36")); // Apagado
-            }
+            // Segmento redondeado: rojo si la carrera ya se corrió, gris si no
+            GradientDrawable forma = new GradientDrawable();
+            forma.setCornerRadius(3 * density);
+            forma.setColor(ContextCompat.getColor(this,
+                    i < carrerasCompletadas ? R.color.racing_red : R.color.surface_card_alt));
+            segment.setBackground(forma);
+
             container.addView(segment);
         }
     }
