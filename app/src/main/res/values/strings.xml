@@ -66,4 +66,19 @@
     <string name="label_carreras">Carreras</string>
     <string name="season_value">4/6</string>
     <string name="btn_ver_metricas_flecha">Ver métricas →</string>
+
+    <!-- Pantalla de Métricas (estética nueva) -->
+    <string name="metricas_ultima_sesion">ÚLTIMA SESIÓN</string>
+    <string name="metricas_promedio">Promedio (s)</string>
+    <string name="metricas_mejor">Mejor vuelta (s)</string>
+    <string name="metricas_chart_vueltas">Tiempo por vuelta</string>
+    <string name="metricas_prom_motor">Prom. motor</string>
+    <string name="metricas_min">Mínima</string>
+    <string name="metricas_max">Máxima</string>
+    <string name="metricas_chart_motor">Temperatura del motor por vuelta</string>
+    <string name="metricas_neumaticos">Temperatura de neumáticos</string>
+    <string name="tire_del_izq">Delantero izq.</string>
+    <string name="tire_del_der">Delantero der.</string>
+    <string name="tire_tras_izq">Trasero izq.</string>
+    <string name="tire_tras_der">Trasero der.</string>
 </resources>

@@ -2,29 +2,29 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0F1012"
+    android:background="@drawable/bg_screen"
     android:padding="20dp">
 
-    <!-- Botón Volver (Estilo Pill) -->
+    <!-- Botón Volver -->
     <Button
         android:id="@+id/btnVolver"
         android:layout_width="wrap_content"
         android:layout_height="36dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/bg_pill_button"
+        android:fontFamily="@font/barlow_semibold"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
-        android:text="‹ Volver"
-        android:textColor="#FFFFFF"
+        android:text="@string/btn_volver"
+        android:textColor="@color/text_white"
         android:textSize="13sp"
         app:backgroundTint="@null"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <!-- Logo Arriba a la Derecha -->
+    <!-- Logo arriba a la derecha -->
     <androidx.cardview.widget.CardView
         android:id="@+id/cardLogoMetricas"
         android:layout_width="36dp"
@@ -39,26 +39,38 @@
             android:id="@+id/imgLogoMetricas"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="centerCrop"
             android:contentDescription="@string/team_name"
+            android:scaleType="centerCrop"
             android:src="@drawable/logo_equipo" />
-
     </androidx.cardview.widget.CardView>
 
-    <!-- Título MÉTRICAS -->
+    <!-- Etiqueta + título -->
+    <TextView
+        android:id="@+id/tvLabelSesion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/barlow_semibold"
+        android:letterSpacing="0.25"
+        android:text="@string/metricas_ultima_sesion"
+        android:textColor="@color/racing_red"
+        android:textSize="11sp"
+        app:layout_constraintTop_toBottomOf="@id/btnVolver"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <TextView
         android:id="@+id/tvTitleMetricas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:fontFamily="@font/barlow_condensed_extrabold_italic"
+        android:includeFontPadding="false"
         android:text="@string/title_metricas"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/btnVolver"
+        android:textColor="@color/text_white"
+        android:textSize="44sp"
+        app:layout_constraintTop_toBottomOf="@id/tvLabelSesion"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <!-- Tabs Selector -->
+    <!-- Pestañas -->
     <LinearLayout
         android:id="@+id/layoutTabs"
         android:layout_width="match_parent"
@@ -74,26 +86,30 @@
             android:id="@+id/btnVueltas"
             android:layout_width="0dp"
             android:layout_height="40dp"
-            android:layout_weight="1"
             android:layout_marginEnd="6dp"
-            android:background="@drawable/bg_pill_button"
+            android:layout_weight="1"
+            android:background="@drawable/bg_button_red"
+            android:fontFamily="@font/barlow_semibold"
             android:text="@string/tab_vueltas"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/text_white"
+            android:textSize="14sp"
             app:backgroundTint="@null" />
 
         <Button
             android:id="@+id/btnTemperaturas"
             android:layout_width="0dp"
             android:layout_height="40dp"
-            android:layout_weight="1"
             android:layout_marginStart="6dp"
+            android:layout_weight="1"
             android:background="@drawable/bg_pill_button"
+            android:fontFamily="@font/barlow_semibold"
             android:text="@string/tab_temperaturas"
-            android:textColor="#808080"
+            android:textColor="@color/text_gray"
+            android:textSize="14sp"
             app:backgroundTint="@null" />
     </LinearLayout>
 
-    <!-- Contenedor Dinámico -->
+    <!-- Contenedor dinámico -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
