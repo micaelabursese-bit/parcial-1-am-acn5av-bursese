@@ -1,13 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="background_dark">#121212</color>
-    <color name="surface_card">#1E1E1E</color>
-    <color name="racing_red">#D32F2F</color>
-    <color name="racing_red_dark">#8E0000</color>
-    <color name="accent_blue">#2979FF</color>
+    <!-- Paleta Maggio Kart (misma que la web) -->
+    <color name="background_dark">#0D0D0F</color>
+    <color name="surface_card">#1C1C1F</color>
+    <color name="surface_card_alt">#2A2A2E</color>
+    <color name="border_subtle">#333338</color>
+    <color name="racing_red">#C0392B</color>
+    <color name="racing_red_dark">#A52F23</color>
+    <color name="accent_blue">#4F7BE8</color>
     <color name="text_white">#FFFFFF</color>
-    <color name="text_gray">#B0B0B0</color>
-    <!-- Nuevos colores para las pestañas y métricas -->
-    <color name="tab_selected">#3A7DFF</color>
-    <color name="tab_unselected">#252528</color>
+    <color name="text_gray">#9A9AA2</color>
+    <color name="text_muted">#7A7A82</color>
+    <color name="text_hint">#606060</color>
+    <color name="tab_selected">#4F7BE8</color>
+    <color name="tab_unselected">#2A2A2E</color>
+
+    <!-- Alias por si ya los usaste en el paso de colores anterior -->
+    <color name="screen_bg">#0D0D0F</color>
+    <color name="card_bg">#1C1C1F</color>
+    <color name="pill_bg">#2A2A2E</color>
+    <color name="info_blue">#4F7BE8</color>
+    <color name="text_secondary">#9A9AA2</color>
 </resources>
