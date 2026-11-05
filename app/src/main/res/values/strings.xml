@@ -39,4 +39,31 @@
     <string name="btn_guardar_experiencia">Guardar Experiencia</string>
     <string name="btn_agregar_experiencia">Publicar Experiencia</string>
     <string name="error_vacio">Por favor escribe una experiencia antes de publicar</string>
+
+    <!-- Textos para la Pantalla de Setup del Kart (SetupActivity) -->
+    <string name="btn_setup">Setup del kart</string>
+    <string name="title_setup">Setup del Kart</string>
+    <string name="label_setup_numero">Setup usado</string>
+    <string name="label_corona">Corona</string>
+    <string name="label_presion_frio">Presión en frío</string>
+    <string name="label_presion_caliente">Presión en caliente</string>
+    <string name="label_neumaticos">Neumáticos (tipo y uso)</string>
+    <string name="label_altura_eje">Altura de eje</string>
+    <string name="check_tensores">Lleva tensores</string>
+    <string name="label_notas_setup">Qué se rompió, reparó o cambió</string>
+    <string name="hint_notas_setup">Anotá cualquier detalle del kart en esta tanda...</string>
+    <string name="btn_guardar_setup">Guardar setup</string>
+    <string name="title_setups_guardados">SETUPS GUARDADOS</string>
+    <string name="error_setup_vacio">Completá al menos la corona y los neumáticos</string>
+
+    <!-- Estética nueva de la pantalla principal -->
+    <string name="brand_maggio">MAGGIO</string>
+    <string name="brand_kart">KART</string>
+    <string name="hero_label">PILOTO DESTACADO</string>
+    <string name="driver_first">AGUSTÍN</string>
+    <string name="driver_last">RINCÓN</string>
+    <string name="hero_number">02</string>
+    <string name="label_carreras">Carreras</string>
+    <string name="season_value">4/6</string>
+    <string name="btn_ver_metricas_flecha">Ver métricas →</string>
 </resources>

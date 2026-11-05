@@ -30,6 +30,9 @@
 
         <activity android:name=".ExperienciaActivity" android:exported="false" />
 
+        <!-- Pantalla de Setup del Kart -->
+        <activity android:name=".SetupActivity" android:exported="false" />
+
     </application>
 
 </manifest>
